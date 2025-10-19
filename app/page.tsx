@@ -1,103 +1,104 @@
+"use client";
+import Link from "next/link";
+import Container from "@/components/Container";
+import ExperienceSection from "@/components/ExperienceSection";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <section className="relative overflow-hidden py-6 sm:py-12 pb-20 sm:pb-32">
+        <div className="ml-grid" aria-hidden="true" />
+        <Container size="lg">
+          {/* Greeting + bio on left, photo on right */}
+          <div className="grid gap-8 md:grid-cols-2 md:items-start">
+            {/* Left: Greeting + all bio text */}
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight gradient-text fade-in-up leading-tight">
+                Hi, I'm Muhammad
+              </h1>
+              <div className="mt-6 space-y-4">
+                <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
+                  I'm a 20-year-old CS student at the University of Texas at Dallas, exploring my path in engineering with a growing focus on AI/ML. Most recently, I interned as an SDE at Amazon in their AGI Foundations team, working on data collection, model training, and fine-tuning.
+                </p>
+                <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
+                  While most of my experience is in applied AI/ML, I've become increasingly fascinated by the underlying mechanics of neural networks and large language models, and that's where I hope to take the next phase of my journey.
+                </p>
+              </div>
+              
+              {/* CTAs under bio text */}
+              <div className="mt-8 flex flex-wrap gap-3 fade-in-up fade-in-up-3">
+                <Link
+                  href="/projects"
+                  className="rounded-md bg-white/10 text-white px-5 py-2.5 text-base font-medium hover:bg-white/15"
+                >
+                  View Projects
+                </Link>
+                <Link
+                  href="/blog"
+                  className="rounded-md border border-white/15 text-white px-5 py-2.5 text-base font-medium hover:border-white/30 hover:bg-white/5"
+                >
+                  Read Blog
+                </Link>
+              </div>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            {/* Right: Photo */}
+            <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] rounded-xl border border-white/10 overflow-hidden fade-in-up fade-in-up-1">
+              <Image
+                src="/mainphoto.jpg"
+                alt="Photo of Muhammad Siddique"
+                fill
+                priority
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </Container>
+
+        {/* Experience header teaser - clickable to scroll down */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-black/60 to-black pointer-events-none" />
+        <motion.button
+          onClick={() => {
+            document.getElementById('experience-section')?.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ scale: 1.05, y: -4 }}
+          whileTap={{ scale: 0.98 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 pointer-events-auto group cursor-pointer"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="flex flex-col items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm group-hover:border-white/30 group-hover:bg-black/60 transition-all duration-300">
+            <motion.h2 
+              className="text-3xl sm:text-4xl font-semibold tracking-tight gradient-text"
+            >
+              Experience
+            </motion.h2>
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity, 
+                ease: 'easeInOut' 
+              }}
+              className="text-white/50 group-hover:text-white/70 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </motion.div>
+          </div>
+        </motion.button>
+      </section>
+      <div id="experience-section">
+        <ExperienceSection />
+      </div>
+    </>
   );
 }
