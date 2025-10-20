@@ -72,7 +72,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ scale: 1.05, y: -4 }}
           whileTap={{ scale: 0.98 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 pointer-events-auto group cursor-pointer"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 pointer-events-auto group cursor-pointer"
         >
           <div className="flex flex-col items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm group-hover:border-white/30 group-hover:bg-black/60 transition-all duration-300">
             <motion.h2 
