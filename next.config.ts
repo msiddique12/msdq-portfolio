@@ -4,7 +4,6 @@ import createMDX from "@next/mdx";
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    // Use string module names so options remain serializable
     remarkPlugins: ["remark-gfm"],
     rehypePlugins: [
       "rehype-slug",
