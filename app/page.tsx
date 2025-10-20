@@ -16,14 +16,14 @@ export default function Home() {
             {/* Left: Greeting + all bio text */}
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight gradient-text fade-in-up leading-tight">
-                Hi, I'm Muhammad
+                Hi, I&apos;m Muhammad
               </h1>
               <div className="mt-6 space-y-4">
                 <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
-                  I'm a 20-year-old CS student at the University of Texas at Dallas, exploring my path in engineering with a growing focus on AI/ML. Most recently, I interned as an SDE at Amazon in their AGI Foundations team, working on data collection, model training, and fine-tuning.
+                  I&apos;m a CS student at UT Dallas graduating in December 2025. University of Texas at Dallas, exploring my path in engineering with a growing focus on AI/ML. Most recently, I interned as an SDE at Amazon in their AGI Foundations team, working on data collection, model training, and fine-tuning.
                 </p>
                 <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
-                  While most of my experience is in applied AI/ML, I've become increasingly fascinated by the underlying mechanics of neural networks and large language models, and that's where I hope to take the next phase of my journey.
+                  While most of my experience is in applied AI/ML, I&apos;ve become increasingly fascinated by the underlying mechanics of neural networks and large language models, and that&apos;s where I hope to take the next phase of my journey.
                 </p>
               </div>
               
