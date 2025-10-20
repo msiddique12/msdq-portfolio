@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   description: "CS student at UT Dallas building AI systems. Shipped ML tools at Amazon AGI, won a major hackathon sponsored by AWS, NVIDIA, and Anthropic. Exploring the intersection of AI and practical software.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
