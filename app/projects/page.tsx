@@ -56,7 +56,7 @@ export default function ProjectsPage() {
           className="text-center max-w-3xl mx-auto"
         >
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight gradient-text">Projects</h1>
-          <p className="mt-8 text-white/70 text-xl sm:text-2xl leading-relaxed">Things I've built, learned from, and had fun breaking along the way.</p>
+          <p className="mt-8 text-white/70 text-xl sm:text-2xl leading-relaxed">Things I've built and learned from along the way.</p>
         </motion.div>
         
         <div className="mt-16 sm:mt-20 space-y-8">
