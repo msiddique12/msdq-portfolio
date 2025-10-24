@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
 import Container from "@/components/Container";
-import ExperienceSection from "@/components/ExperienceSection";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ExperienceSection = dynamic(() => import("@/components/ExperienceSection"), {
+  loading: () => <div className="py-24 text-center text-white/50">Loading...</div>,
+});
 
 export default function Home() {
   return (
@@ -31,21 +35,43 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-3 fade-in-up fade-in-up-3">
                 <Link
                   href="/projects"
-                  className="rounded-md bg-white/10 text-white px-5 py-2.5 text-base font-medium hover:bg-white/15"
+                  className="group rounded-md bg-white/10 text-white px-5 py-2.5 text-base font-medium hover:bg-white/15 transition-all inline-flex items-center gap-2"
                 >
                   View Projects
+                  <motion.span
+                    className="inline-block"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    →
+                  </motion.span>
                 </Link>
                 <Link
                   href="/blog"
-                  className="rounded-md border border-white/15 text-white px-5 py-2.5 text-base font-medium hover:border-white/30 hover:bg-white/5"
+                  className="group rounded-md border border-white/15 text-white px-5 py-2.5 text-base font-medium hover:border-white/30 hover:bg-white/5 transition-all inline-flex items-center gap-2"
                 >
                   Read Blog
+                  <motion.span
+                    className="inline-block"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    →
+                  </motion.span>
                 </Link>
               </div>
             </div>
 
             {/* Right: Photo */}
-            <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] rounded-xl border border-white/10 overflow-hidden fade-in-up fade-in-up-1">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.02 }}
+              className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] rounded-xl border border-white/10 overflow-hidden"
+            >
               <Image
                 src="/mainphoto.jpg"
                 alt="Photo of Muhammad Siddique"
@@ -53,8 +79,10 @@ export default function Home() {
                 priority
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
               />
-            </div>
+            </motion.div>
           </div>
         </Container>
 

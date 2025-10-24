@@ -102,12 +102,12 @@ export default function ProjectsPage() {
                 {project.tech.split(', ').map((tech, i) => (
                   <motion.span 
                     key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ 
-                      duration: 0.3, 
-                      delay: i * 0.05,
+                      duration: 0.4, 
+                      delay: i * 0.08,
                       ease: [0.22, 1, 0.36, 1] 
                     }}
                     whileHover={{ 
