@@ -5,6 +5,24 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "NanoChat",
+    description: "Trained Andrej Karpathy's NanoChat model(d20) using L40 GPUs on NVIDIA Brev which took 12 hours. Downloaded trained model weights and biases to local PC with RTX 3060ti GPU for experimentation and optimization. Exploring meaningful architectural changes and fine-tuning strategies.",
+    tech: "Python, PyTorch, CUDA, NVIDIA Brev",
+    link: "https://github.com/msiddique12/nanochat",
+    linkText: "View repo",
+    featured: false,
+    awards: ["ML/AI", "🚧 In Progress"],
+  },
+  {
+    title: "Coding Agent",
+    description: "Building a custom coding agent inspired by Claude Code and Q CLI to avoid subscription costs. Leveraging free LLM inference APIs like NVIDIA NIM for intelligent code generation and assistance. Early-stage development focused on core agent architecture and API integration.",
+    tech: "Python, NVIDIA NIM, LLM APIs, CLI Tools",
+    link: "https://github.com/msiddique12/coding-agent",
+    linkText: "View repo",
+    featured: false,
+    awards: ["Agentic AI", "🚧 In Progress"],
+  },
+  {
     title: "LearnAI",
     description: "Won 1st place ($10K) at Breaking Barriers Hackathon sponsored by AWS, NVIDIA, and Anthropic, competing against 40+ teams. Built a personalized learning platform using Claude Haiku to generate tailored content in 4+ formats: narratives, summaries, diagrams, and interactive games.",
     tech: "React, FastAPI, AWS Bedrock, AWS S3, AWS Cognito, AWS Translation, AWS Transcribe",
