@@ -5,8 +5,34 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "📌 LearnAI",
+    description:
+      "Won 1st place ($10K) at Breaking Barriers Hackathon sponsored by AWS, NVIDIA, and Anthropic, competing against 40+ teams. Built a personalized learning platform using Claude Haiku to generate tailored content in 4+ formats: narratives, summaries, diagrams, and interactive games.",
+    tech:
+      "React, FastAPI, AWS Bedrock, AWS S3, AWS Cognito, AWS Translation, AWS Transcribe",
+    link: "https://github.com/manvirchakal/LearnAI",
+    linkText: "View repo",
+    featured: true,
+    awards: ["Full-Stack/AI ", "🏆 1st Place · $10K Prize"],
+    extraLinks: [
+      {
+        label: "LinkedIn Post",
+        url: "https://www.linkedin.com/posts/msdq_breakingbarriers-hackathon-aws-activity-7244458852627234816-XUX5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZvKncB-A-xe7ca-EeDavT1jV65d0mQ_fQ",
+      },
+      {
+        label: "YouTube Video",
+        url: "https://youtu.be/ZjNkuizdiXc?si=A1PTZR5iF4z6gkNz",
+      },
+      {
+        label: "AWS Blog",
+        url: "https://aws.amazon.com/blogs/industries/introducing-breaking-barriers-initiative-building-generative-ai-applications-for-digital-inclusion/",
+      },
+    ],
+  },
+  {
     title: "NanoChat",
-    description: "Trained Andrej Karpathy's NanoChat model(d20) using L40 GPUs on NVIDIA Brev which took 12 hours. Downloaded trained model weights and biases to local PC with RTX 3060ti GPU for experimentation and optimization. Exploring meaningful architectural changes and fine-tuning strategies.",
+    description:
+      "Trained Andrej Karpathy's NanoChat model(d20) using L40 GPUs on NVIDIA Brev which took 12 hours. Downloaded trained model weights and biases to local PC with RTX 3060ti GPU for experimentation and optimization. Exploring meaningful architectural changes and fine-tuning strategies.",
     tech: "Python, PyTorch, CUDA, NVIDIA Brev",
     link: "https://github.com/msiddique12/nanochat",
     linkText: "View repo",
@@ -15,7 +41,8 @@ const projects = [
   },
   {
     title: "Coding Agent",
-    description: "Building a custom coding agent inspired by Claude Code and Q CLI to avoid subscription costs. Leveraging free LLM inference APIs like NVIDIA NIM for intelligent code generation and assistance. Early-stage development focused on core agent architecture and API integration.",
+    description:
+      "Building a custom coding agent inspired by Claude Code and Q CLI to avoid subscription costs. Leveraging free LLM inference APIs like NVIDIA NIM for intelligent code generation and assistance. Early-stage development focused on core agent architecture and API integration.",
     tech: "Python, NVIDIA NIM, LLM APIs, CLI Tools",
     link: "https://github.com/msiddique12/coding-agent",
     linkText: "View repo",
@@ -23,17 +50,9 @@ const projects = [
     awards: ["Agentic AI", "🚧 In Progress"],
   },
   {
-    title: "LearnAI",
-    description: "Won 1st place ($10K) at Breaking Barriers Hackathon sponsored by AWS, NVIDIA, and Anthropic, competing against 40+ teams. Built a personalized learning platform using Claude Haiku to generate tailored content in 4+ formats: narratives, summaries, diagrams, and interactive games.",
-    tech: "React, FastAPI, AWS Bedrock, AWS S3, AWS Cognito, AWS Translation, AWS Transcribe",
-    link: "https://github.com/manvirchakal/LearnAI",
-    linkText: "View repo",
-    featured: true,
-    awards: ["Full-Stack", "🏆 1st Place · $10K Prize"],
-  },
-  {
     title: "ResuBot",
-    description: "Interactive resume analyzer providing targeted feedback. Trained a Logistic Regression model on 2,400+ resumes. Built an NLP pipeline with NLTK and LanguageTool to calculate grammar scores and assess resume metrics.",
+    description:
+      "Interactive resume analyzer providing targeted feedback. Trained a Logistic Regression model on 2,400+ resumes. Built an NLP pipeline with NLTK and LanguageTool to calculate grammar scores and assess resume metrics.",
     tech: "Python, Scikit-Learn, Pandas, NLTK",
     link: "https://github.com/UTD-AIS-Mentorship/Resume-Grading-and-Job-Recommendation-Fall-22",
     linkText: "View repo",
@@ -42,7 +61,8 @@ const projects = [
   },
   {
     title: "VitaLife",
-    description: "A full-stack recipe search application that lets users discover recipes by ingredients or dish name using the Edamam Recipe API. Features detailed recipe information, ingredient lists, and a responsive design for seamless browsing across devices.",
+    description:
+      "A full-stack recipe search application that lets users discover recipes by ingredients or dish name using the Edamam Recipe API. Features detailed recipe information, ingredient lists, and a responsive design for seamless browsing across devices.",
     tech: "React, Node.js, Express, Axios, Tailwind CSS",
     link: "https://github.com/msiddique12/VitaLife-Website",
     linkText: "View repo",
@@ -51,7 +71,8 @@ const projects = [
   },
   {
     title: "YouTube Transcript Summarizer",
-    description: "A Chrome extension that generates concise summaries of YouTube video transcripts. Leverages the YouTube Transcript API for extraction and Hugging Face Transformers for advanced text summarization, with a Flask backend processing requests seamlessly.",
+    description:
+      "A Chrome extension that generates concise summaries of YouTube video transcripts. Leverages the YouTube Transcript API for extraction and Hugging Face Transformers for advanced text summarization, with a Flask backend processing requests seamlessly.",
     tech: "Python, Flask, Hugging Face Transformers, JavaScript, HTML, CSS",
     link: "https://github.com/msiddique12/YoutubeSummarizerExtension",
     linkText: "View repo",
@@ -59,6 +80,7 @@ const projects = [
     awards: ["Chrome Extension"],
   },
 ];
+
 
 export default function ProjectsPage() {
   return (
@@ -142,7 +164,9 @@ export default function ProjectsPage() {
               </div>
               
               <motion.a 
-                href={project.link} 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 text-xl font-medium underline underline-offset-4 decoration-white/30 hover:decoration-white/70 group-hover:text-white transition-colors"
                 whileHover={{ x: 4 }}
                 transition={{ duration: 0.2 }}
@@ -152,6 +176,36 @@ export default function ProjectsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </motion.a>
+                {project.extraLinks && (
+                  <div className="mt-4 flex flex-wrap gap-4">
+                    {project.extraLinks.map((extra, i) => (
+                      <motion.a
+                        key={i}
+                        href={extra.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-lg font-medium underline underline-offset-4 decoration-white/30 hover:decoration-white/70 text-white/80 hover:text-white transition-colors"
+                        whileHover={{ x: 4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {extra.label}
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </motion.a>
+                    ))}
+                  </div>
+                )}
             </motion.article>
           ))}
         </div>
