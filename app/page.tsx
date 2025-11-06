@@ -24,7 +24,7 @@ export default function Home() {
               </h1>
               <div className="mt-6 space-y-4">
                 <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
-                  I&apos;m a CS student at UT Dallas graduating in December 2025. University of Texas at Dallas, exploring my path in engineering with a growing focus on AI/ML. Most recently, I interned as an SDE at Amazon in their AGI Foundations team, working on data collection, model training, and fine-tuning.
+                  I&apos;m a CS student at UT Dallas graduating in December 2025. University of Texas at Dallas, exploring my path in engineering with a growing focus on AI/ML. Most recently, I interned as an SDE at Amazon in their AGI Foundations team, working on the data collection platform for model training and fine-tuning.
                 </p>
                 <p className="text-white/70 text-xl sm:text-2xl fade-in-up fade-in-up-1 leading-relaxed">
                   While most of my experience is in applied AI/ML, I&apos;ve become increasingly fascinated by the underlying mechanics of neural networks and large language models, and that&apos;s where I hope to take the next phase of my journey.
