@@ -30,15 +30,35 @@ const projects = [
     ],
   },
   {
-    title: "NanoChat",
+    title: "Vizpath",
     description:
-      "Trained Andrej Karpathy's NanoChat model(d20) using L40 GPUs on NVIDIA Brev which took 12 hours. Downloaded trained model weights and biases to local PC with RTX 3060ti GPU for experimentation and optimization. Exploring meaningful architectural changes and fine-tuning strategies.",
-    tech: "Python, PyTorch, CUDA, NVIDIA Brev",
-    link: "https://github.com/msiddique12/nanochat",
+      "AI agent observability platform for tracking LLM calls, tool invocations, and decision paths. Features a Python SDK with LangGraph/LangChain adapters, real-time WebSocket streaming, and D3.js DAG visualizations. Includes training data curation with 5-tier quality scoring and embedding clustering. Supports token tracking and cost attribution across 9+ LLM models.",
+    tech: "Python, TypeScript, FastAPI, React, D3.js, PostgreSQL, WebSocket",
+    link: "https://github.com/msiddique12/vizpath",
     linkText: "View repo",
     featured: false,
-    awards: ["ML/AI", "🚧 In Progress"],
+    awards: ["Agentic AI", "Observability"],
   },
+  {
+    title: "Spatio-Temporal Gesture Recognition",
+    description:
+      "Hybrid ViT-Mamba architecture combining Vision Transformers with State Space Models for efficient gesture recognition. Achieves 72% Top-1 accuracy on Jester dataset (27 classes) with linear time complexity. Features a low-latency pipeline (~16ms latency, 60+ FPS) optimized for real-time applications.",
+    tech: "PyTorch, Mamba SSM, Vision Transformer, CUDA",
+    link: "https://github.com/msiddique12/gesture-recognition",
+    linkText: "View repo",
+    featured: false,
+    awards: ["ML/AI", "Computer Vision"],
+  },
+  // {
+  //   title: "NanoChat",
+  //   description:
+  //     "Trained Andrej Karpathy's NanoChat model(d20) using L40 GPUs on NVIDIA Brev which took 12 hours. Downloaded trained model weights and biases to local PC with RTX 3060ti GPU for experimentation and optimization. Exploring meaningful architectural changes and fine-tuning strategies.",
+  //   tech: "Python, PyTorch, CUDA, NVIDIA Brev",
+  //   link: "https://github.com/msiddique12/nanochat",
+  //   linkText: "View repo",
+  //   featured: false,
+  //   awards: ["ML/AI", "🚧 In Progress"],
+  // },
   {
     title: "Coding Agent",
     description:
